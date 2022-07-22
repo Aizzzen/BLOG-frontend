@@ -6,20 +6,20 @@
       </div>
       <div class="nav-links">
         <ul v-show="!mobile">
-          <router-link class="link" to="#">Главная</router-link>
-          <router-link class="link" to="#">Статьи</router-link>
+          <router-link class="link" :to="{name: 'Home'}">Главная</router-link>
+          <router-link class="link" :to="{name: 'Posts'}">Статьи</router-link>
           <router-link class="link" to="#">Создание статьи</router-link>
-          <router-link class="link" to="#">Авторизация</router-link>
+          <router-link class="link" :to="{name: 'Login'}">Авторизация</router-link>
         </ul>
       </div>
     </nav>
     <menu-icon @click="toggleMobileNav" class="menu-icon" v-show="mobile"/>
     <transition name="mobile-nav">
       <ul class="mobile-nav" v-show="mobileNav">
-        <router-link class="link" to="#">Главная</router-link>
-        <router-link class="link" to="#">Статьи</router-link>
+        <router-link class="link" :to="{name: 'Home'}">Главная</router-link>
+        <router-link class="link" :to="{name: 'Posts'}">Статьи</router-link>
         <router-link class="link" to="#">Создание статьи</router-link>
-        <router-link class="link" to="#">Авторизация</router-link>
+        <router-link class="link" :to="{name: 'Login'}">Авторизация</router-link>
       </ul>
     </transition>
   </header>

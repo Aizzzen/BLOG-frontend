@@ -6,20 +6,26 @@
           <router-link class="header" :to="{ name: 'Home' }">_GADAMUROV</router-link>
           <ul>
             <li>
-              <a href="#"><twitter class="svg-icon"/></a>
+              <a target="_blank" href="https://t.me/yugadamurov" title="Telegram"><telegram class="svg-icon"/></a>
             </li>
             <li>
-              <a href="#"><instagram class="svg-icon"/></a>
+              <a target="_blank" href="https://www.instagram.com/yu.gadamurov" title="Instagram"><instagram class="svg-icon"/></a>
             </li>
             <li>
-              <a href="#"><linkedin class="svg-icon"/></a>
+              <a target="_blank" href="https://github.com/Aizzzen" title="GitHub"><github class="svg-icon"/></a>
+            </li>
+            <li>
+              <a target="_blank" href="https://career.habr.com/aizzzen" title="Habr"><habr class="svg-icon"/></a>
+            </li>
+            <li>
+              <a target="_blank" href="gadamurov.yunus02@gmail.com" title="Gmail"><email class="svg-icon"/></a>
             </li>
           </ul>
         </div>
         <div class="col-2">
           <ul>
             <router-link class="link" :to="{ name: 'Home' }">Главная</router-link>
-            <router-link class="link" :to="{ name: 'Blogs' }">Статьи</router-link>
+            <router-link class="link" :to="{ name: 'Posts' }">Статьи</router-link>
             <router-link v-if="user" class="link" :to="{ name: 'CreatePost' }">Создать статьи</router-link>
             <router-link v-if="!user" class="link" :to="{ name: 'Login' }">Авторизация</router-link>
           </ul>
@@ -34,15 +40,19 @@
 </template>
 
 <script>
-import twitter from "../assets/Icons/twitter-brands.svg";
 import instagram from "../assets/Icons/instagram-brands.svg";
-import linkedin from "../assets/Icons/linkedin-brands.svg";
+import habr from "../assets/Icons/habr.svg";
+import telegram from "../assets/Icons/telegram-app.svg";
+import github from "../assets/Icons/github.svg";
+import email from "../assets/Icons/gmail.svg";
 export default {
   name: "footer-block",
   components: {
-    twitter,
     instagram,
-    linkedin,
+    habr,
+    telegram,
+    github,
+    email,
   },
   // computed: {
   //   user() {

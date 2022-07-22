@@ -2,7 +2,7 @@
   <div class="home">
     <div class="blog-card-wrap">
       <div class="container">
-        <h3>Смотреть больше</h3>
+        <h3>Смотреть больше...</h3>
         <div class="blog-cards">
           <post-card :post="post" v-for="(post, idx) in samplePostCard" :key="idx"/>
         </div>
@@ -11,7 +11,7 @@
     <div class="updates">
       <div class="container">
         <h2>Не пропускайте новые публикации!</h2>
-        <router-link class="router-button" to="#">
+        <router-link class="router-button" :to="{name: 'Register'}">
           Перейти к регистрации <Arrow class="arrow arrow-light" />
         </router-link>
       </div>
@@ -30,12 +30,12 @@ export default {
   },
   data() {
     return {
-      samplePostCard: [
-        {postTitle: 'Blog Card 1', postCoverPhoto: 'stock-1', postDate: 'July 21 2022'},
-        {postTitle: 'Blog Card 2', postCoverPhoto: 'stock-2', postDate: 'July 21 2022'},
-        {postTitle: 'Blog Card 3', postCoverPhoto: 'stock-3', postDate: 'July 21 2022'},
-        {postTitle: 'Blog Card 4', postCoverPhoto: 'stock-4', postDate: 'July 21 2022'},
-      ]
+
+    }
+  },
+  computed: {
+    samplePostCard() {
+      return this.$store.state.samplePostCard
     }
   }
 };

@@ -1,9 +1,9 @@
 <template>
   <div class="app-wrapper">
     <div class="app">
-      <navigation-bar/>
+      <navigation-bar v-if="!navigation" />
       <router-view />
-      <footer-block />
+      <footer-block v-if="!navigation" />
     </div>
   </div>
 </template>
@@ -18,12 +18,31 @@ export default {
     FooterBlock
   },
   data() {
-    return {};
+    return {
+      navigation: null,
+    };
   },
-  created() {},
+  created() {
+    this.checkRoute()
+  },
   mounted() {},
-  methods: {},
-  watch: {},
+  methods: {
+    checkRoute() {
+      if( this.$route.name === 'Login' ||
+          this.$route.name === 'Register' ||
+          this.$route.name === 'Reset'
+        ) {
+        this.navigation = true
+        return
+      }
+      this.navigation = false
+    }
+  },
+  watch: {
+    $route() {
+      this.checkRoute()
+    }
+  },
 };
 </script>
 
